@@ -32,15 +32,22 @@
     });
 
   });
-  function sendMail(){
-    let parms = {
-      name :document.getElementsById("name-field").value,
-      email : document.getElementById("email-field").value,
-      subject : document.getElementById("subject-field").value,
-      message : document.getElementById("message-field").value,
+  /**Send Email */
+  function sendEmail() {
+    const templateParms = {
+      name :document.querySelector("#name-field").value,
+      email : document.querySelector("#email-field").value,
+      subject : document.querySelector("#subject-field").value,
+      message : document.querySelector("#message-field").value
     }
 
-    emailjs.send("service_e8mlbcq" , "template_uwwlkis" ,parms).then(alert("Email Sent!!!"))
+    emailjs.send("service_e8mlbcq", "template_uwwlkis", templateParms)
+      .then(() => alert("Email sent successfully"))
+      .catch(() => alert("Email not sent"));
+
+  }
+  if (contactForm) {
+    contactForm.addEventListener("submit", sendEmail);
   }
 
   /**

@@ -35,17 +35,15 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <script type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-        </script>
-        <script type="text/javascript">
-            (function(){
-              emailjs.init({
-                publicKey: "mcx14sxubcUhSmxYb",
-            
-              });
-            })();
-        </script>
-        <script src="main.js"></script>
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "mcx14sxubcUhSmxYb",
+      });
+   })();
+</script>
 </head>
 
 <body class="index-page">
@@ -701,7 +699,7 @@ while growing into an increasingly versatile digital professional.</p>
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -729,7 +727,7 @@ while growing into an increasingly versatile digital professional.</p>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                  <button type="submit" onclick="sendMail">Send Message</button>
+                  <button type="submit" onclick="sendEmail()">Send Message</button>
                 </div>
 
               </div>
@@ -769,7 +767,7 @@ while growing into an increasingly versatile digital professional.</p>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!--<script src="assets/vendor/php-email-form/validate.js"></script> -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
