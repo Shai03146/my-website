@@ -1,56 +1,544 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  
+  <!-- html2pdf.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      padding: 20px;
+      color: #333;
+    }
+
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #003d80;
+    }
+
+    .btn-secondary {
+      background-color: #28a745;
+    }
+
+    .btn-secondary:hover {
+      background-color: #1e7e34;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .btn-danger:hover {
+      background-color: #bd2130;
+    }
+
+    /* Invoice Container */
+    .invoice-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 6px;
+      font-size: 13px;
+      color: #333;
+      background: #fafafa;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #0056b3;
+      background: #fff;
+    }
+
+    textarea {
+      resize: none;
+      overflow: hidden;
+      min-height: 38px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+
+    /* Header Section */
+    .header-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .logo-container {
+      width: 200px;
+    }
+
+    .logo-preview {
+      max-width: 180px;
+      max-height: 90px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .meta-details {
+      text-align: right;
+      width: 250px;
+    }
+
+    .meta-details h1 {
+      font-size: 28px;
+      color: #111;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    .meta-row label {
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .meta-row input {
+      width: 130px;
+      text-align: right;
+    }
+
+    /* Addresses Section */
+    .address-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .address-block {
+      flex: 1;
+    }
+
+    .address-block h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #666;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    .address-block textarea {
+      height: 90px;
+    }
+
+    /* Table Styling */
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    .items-table th {
+      background-color: #f1f3f5;
+      color: #333;
+      text-align: left;
+      padding: 10px 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .items-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    .col-date { width: 110px; }
+    .col-desc { width: auto; }
+    .col-hours { width: 75px; }
+    .col-rate { width: 95px; }
+    .col-total { width: 100px; text-align: right; font-weight: bold; padding-top: 12px; }
+    .col-action { width: 40px; text-align: center; }
+
+    .items-table input[type="number"] {
+      text-align: right;
+    }
+
+    /* Summary & Totals */
+    .summary-section {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .total-box {
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Bottom Info */
+    .bottom-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .closing-block, .banking-block {
+      flex: 1;
+    }
+
+    .closing-block h3, .banking-block h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #666;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .invoice-footer {
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #666;
+    }
+
+    /* Print Stylesheet for native Ctrl+P / Save as PDF */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .action-bar, .no-print {
+        display: none !important;
+      }
+      .invoice-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      input, textarea {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        appearance: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="action-bar">
+    <button class="btn btn-secondary" onclick="addRow()">+ Add Line Item</button>
+    <button class="btn" onclick="generatePDF()">Download PDF</button>
+  </div>
+
+  <!-- Main Printable Invoice Container -->
+  <div class="invoice-container" id="invoice">
     
-    <div class="container">
- 
-        <div class="card">
-  <div class="card-header">
-    <h4>INVOICE</h4>
+    <!-- Header -->
+    <div class="header-grid">
+      <div class="logo-container">
+        <img id="logoPreview" class="logo-preview" src="" alt="Company Logo" style="display:none;">
+        <div class="no-print">
+          <label style="font-size: 11px; color: #666; display: block; margin-bottom: 4px;">Upload Logo:</label>
+          <input type="file" id="logoInput" accept="image/*" onchange="loadLogo(event)" style="font-size: 11px;">
+        </div>
+      </div>
+
+      <div class="meta-details">
+        <h1>INVOICE</h1>
+        <div class="meta-row">
+          <label>Invoice #:</label>
+          <input type="text" id="invoiceNum" value="INV-1001">
+        </div>
+        <div class="meta-row">
+          <label>Date:</label>
+          <input type="date" id="invoiceDate" onchange="updateDueDate()">
+        </div>
+        <div class="meta-row">
+          <label>Due Date:</label>
+          <input type="date" id="dueDate">
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Addresses -->
+    <div class="address-grid">
+      <div class="address-block">
+        <h3>From (Your Details)</h3>
+        <textarea id="senderDetails" placeholder="Your Name / Business&#10;Address Line&#10;Email & Phone&#10;Website"></textarea>
+      </div>
+      <div class="address-block">
+        <h3>Billed To (Recipient)</h3>
+        <textarea id="recipientDetails" placeholder="Client Name / Company&#10;Client Address&#10;Client Email&#10;Contact Person"></textarea>
+      </div>
+    </div>
+
+    <!-- Line Items Table -->
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th class="col-date">Date</th>
+          <th class="col-desc">Description</th>
+          <th class="col-hours">Hours</th>
+          <th class="col-rate">Rate ($)</th>
+          <th class="col-total">Total ($)</th>
+          <th class="col-action no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody">
+        <!-- Dynamic rows added here -->
+      </tbody>
+    </table>
+
+    <div style="margin-bottom: 20px;" class="no-print">
+      <button class="btn btn-secondary" onclick="addRow()">+ Add Row</button>
+    </div>
+
+    <!-- Grand Total -->
+    <div class="summary-section">
+      <div class="total-box">
+        <span>Total Amount Due:</span>
+        <span id="grandTotal">$0.00</span>
+      </div>
+    </div>
+
+    <!-- Closing Note & Banking Details -->
+    <div class="bottom-grid">
+      <div class="closing-block">
+        <h3>Message / Note</h3>
+        <textarea id="closingMessage">Thank you for your business. It is a pleasure working with you!</textarea>
+      </div>
+      <div class="banking-block">
+        <h3>Banking Details</h3>
+        <textarea id="bankingDetails" placeholder="Bank Name: &#10;Account Name: &#10;Account Number: &#10;Branch/Sort Code: "></textarea>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="invoice-footer">
+      <div>Invoice No: <span id="footerInvoiceNum">INV-1001</span></div>
+      <div>Date Sent: <span id="footerDateSent">-</span></div>
+      <div>Due Date: <span id="footerDueDate">-</span></div>
+    </div>
+
   </div>
-  <div class="card-body">
 
-    <div class="row">
-    <div class="col-8">
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Customer</span>
-        <input type="text" class="form-control" placeholder="Customer" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
+  <script>
+    window.onload = function() {
+      const today = new Date();
+      const todayStr = formatDateForInput(today);
+      
+      document.getElementById('invoiceDate').value = todayStr;
+      updateDueDate();
+      addRow();
+      
+      document.getElementById('invoiceNum').addEventListener('input', function() {
+        document.getElementById('footerInvoiceNum').innerText = this.value;
+      });
+    };
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Address</span>
-        <input type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
+    function formatDateForInput(dateObj) {
+      return dateObj.toISOString().split('T')[0];
+    }
 
-    </div>
-    <div class="col-4">
-      Column
-    </div>
-  </div>
+    function updateDueDate() {
+      const dateVal = document.getElementById('invoiceDate').value;
+      if (dateVal) {
+        const createdDate = new Date(dateVal);
+        createdDate.setDate(createdDate.getDate() + 7);
+        
+        const dueDateStr = formatDateForInput(createdDate);
+        document.getElementById('dueDate').value = dueDateStr;
 
-  <div class="row">
-    <div class="col-8">
-      Column
-    </div>
-    <div class="col-4">
-      Column
-    </div>
-  </div>
-   
-  </div>
-</div>
+        document.getElementById('footerDateSent').innerText = formatDateDisplay(dateVal);
+        document.getElementById('footerDueDate').innerText = formatDateDisplay(dueDateStr);
+      }
+    }
 
-</div>
+    document.getElementById('dueDate').addEventListener('change', function() {
+      document.getElementById('footerDueDate').innerText = formatDateDisplay(this.value);
+    });
 
- 
+    function formatDateDisplay(dateStr) {
+      if(!dateStr) return '-';
+      const parts = dateStr.split('-');
+      return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
 
+    function loadLogo(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const logoImg = document.getElementById('logoPreview');
+        logoImg.src = reader.result;
+        logoImg.style.display = 'block';
+      };
+      if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+    function addRow() {
+      const tbody = document.getElementById('itemsBody');
+      const tr = document.createElement('tr');
+      const todayStr = document.getElementById('invoiceDate').value || formatDateForInput(new Date());
+
+      tr.innerHTML = `
+        <td class="col-date"><input type="date" value="${todayStr}"></td>
+        <td class="col-desc"><textarea rows="1" oninput="autoExpand(this)" placeholder="Detailed work description..."></textarea></td>
+        <td class="col-hours"><input type="number" value="1" min="0" step="0.5" oninput="calculateTotals()"></td>
+        <td class="col-rate"><input type="number" value="0.00" min="0" step="0.01" oninput="calculateTotals()"></td>
+        <td class="col-total">$0.00</td>
+        <td class="col-action no-print"><button class="btn btn-danger" onclick="deleteRow(this)">X</button></td>
+      `;
+
+      tbody.appendChild(tr);
+      calculateTotals();
+    }
+
+    function deleteRow(btn) {
+      const row = btn.closest('tr');
+      row.remove();
+      calculateTotals();
+    }
+
+    function autoExpand(field) {
+      field.style.height = 'inherit';
+      field.style.height = field.scrollHeight + 'px';
+    }
+
+    function calculateTotals() {
+      const rows = document.querySelectorAll('#itemsBody tr');
+      let grandTotal = 0;
+
+      rows.forEach(row => {
+        const hoursInput = row.querySelector('.col-hours input');
+        const rateInput = row.querySelector('.col-rate input');
+        
+        if (hoursInput && rateInput) {
+          const hours = parseFloat(hoursInput.value) || 0;
+          const rate = parseFloat(rateInput.value) || 0;
+          const lineTotal = hours * rate;
+
+          row.querySelector('.col-total').innerText = '$' + lineTotal.toFixed(2);
+          grandTotal += lineTotal;
+        }
+      });
+
+      document.getElementById('grandTotal').innerText = '$' + grandTotal.toFixed(2);
+    }
+
+    function generatePDF() {
+      // 1. Check if external html2pdf library loaded successfully
+      if (typeof html2pdf === 'undefined') {
+        alert('PDF generator library failed to load from CDN. Opening native browser Print dialog instead...');
+        window.print();
+        return;
+      }
+
+      // 2. Clone the container to render clean text instead of form inputs
+      const element = document.getElementById('invoice');
+      const clone = element.cloneNode(true);
+
+      // Remove buttons from PDF output clone
+      clone.querySelectorAll('.no-print').forEach(el => el.remove());
+
+      // Replace inputs with plain text spans for accurate PDF rendering
+      clone.querySelectorAll('input').forEach(input => {
+        const span = document.createElement('span');
+        if (input.type === 'date') {
+          span.innerText = formatDateDisplay(input.value);
+        } else {
+          span.innerText = input.value;
+        }
+        input.parentNode.replaceChild(span, input);
+      });
+
+      // Replace textareas with div paragraphs preserving formatting
+      clone.querySelectorAll('textarea').forEach(textarea => {
+        const div = document.createElement('div');
+        div.style.whiteSpace = 'pre-wrap';
+        div.style.fontSize = '13px';
+        div.innerText = textarea.value;
+        textarea.parentNode.replaceChild(div, textarea);
+      });
+
+      // 3. Configure PDF settings
+      const filename = `${document.getElementById('invoiceNum').value || 'Invoice'}.pdf`;
+      const options = {
+        margin:       10,
+        filename:     filename,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, logging: false },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      // 4. Run PDF download
+      html2pdf().set(options).from(clone).save().catch(err => {
+        console.error('PDF generation error:', err);
+        alert('An error occurred during PDF generation. Opening native browser print dialog.');
+        window.print();
+      });
+    }
+  </script>
+</body>
 </html>
