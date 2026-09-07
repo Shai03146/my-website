@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. T. Mafana | Specialist Pediatrician</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkbrand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-pinkbrand-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="w-10 h-10 rounded-2xl bg-pinkbrand-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-pinkbrand-500/20">
+                    <i data-lucide="baby" class="w-6 h-6"></i>
+                </span>
+                <div>
+                    <span>Dr. T. Mafana</span>
+                    <p class="text-[10px] font-semibold tracking-wider text-pinkbrand-600 uppercase">Pediatric Practice</p>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#home" class="hover:text-pinkbrand-600 transition">Home</a>
+                <a href="#about" class="hover:text-pinkbrand-600 transition">About Dr. Mafana</a>
+                <a href="#care-areas" class="hover:text-pinkbrand-600 transition">Services & Care</a>
+                <a href="#parents-guide" class="hover:text-pinkbrand-600 transition">Parent Guide & Fees</a>
+                <a href="#location" class="hover:text-pinkbrand-600 transition">Location</a>
+            </nav>
+            <a href="#contact" class="bg-pinkbrand-600 hover:bg-pinkbrand-700 text-white text-sm font-bold px-6 py-3 rounded-full shadow-lg shadow-pinkbrand-500/25 transition transform hover:-translate-y-0.5">
+                Book Consultation
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-36 pb-20 px-6 max-w-7xl mx-auto min-h-[90vh] flex items-center overflow-hidden">
+        
+        <div class="absolute -bottom-4 left-1/3 opacity-[0.04] pointer-events-none select-none text-pinkbrand-600">
+            <svg width="240" height="240" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="50" cy="25" r="12" />
+                <line x1="50" y1="37" x2="50" y2="65" />
+                <line x1="50" y1="45" x2="30" y2="30" />
+                <line x1="50" y1="45" x2="70" y2="30" />
+                <line x1="50" y1="65" x2="35" y2="90" />
+                <line x1="50" y1="65" x2="65" y2="90" />
+            </svg>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center z-10 relative">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 bg-pinkbrand-50 border border-pinkbrand-200 text-pinkbrand-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> Specialist Pediatric Care in Booysens
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
+                    Gentle healthcare for <span class="gradient-text">little ones & growing teens.</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Dr. T. Mafana provides warm, dedicated pediatric care designed to support your child’s health from newborn days through adolescence, while giving parents full peace of mind.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#contact" class="bg-pinkbrand-600 hover:bg-pinkbrand-700 text-white font-bold px-8 py-4 rounded-full shadow-xl shadow-pinkbrand-500/30 transition transform hover:-translate-y-1">
+                        Book a Visit
+                    </a>
+                    <a href="#care-areas" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-8 py-4 rounded-full transition">
+                        Explore Pediatric Services
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -top-6 -left-6 w-72 h-72 bg-pinkbrand-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
+                <div class="relative rounded-3xl overflow-hidden border-8 border-white shadow-2xl bg-pinkbrand-50">
+                    
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" 
+                         alt="Dr. T. Mafana Pediatrician Exemplar" 
+                         class="w-full h-[480px] object-cover object-top">
+                    
+                    <div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/20">
+                        Test Image / Prototype Exemplar
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-pinkbrand-100 flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Dr. T. Mafana (MBChB, FC Paed)</p>
+                            <p class="text-xs text-pinkbrand-600 font-semibold">Specialist Pediatrician</p>
+                        </div>
+                        <span class="bg-pinkbrand-100 text-pinkbrand-700 p-2 rounded-xl">
+                            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="relative py-20 bg-pinkbrand-50/40 border-y border-pinkbrand-100 overflow-hidden">
+        
+        <div class="absolute right-6 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none select-none text-pinkbrand-600">
+            <svg width="300" height="200" viewBox="0 0 160 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="40" cy="25" r="10" />
+                <line x1="40" y1="35" x2="40" y2="65" />
+                <line x1="40" y1="45" x2="25" y2="55" />
+                <line x1="40" y1="45" x2="60" y2="50" />
+                <line x1="40" y1="65" x2="28" y2="85" />
+                <line x1="40" y1="65" x2="52" y2="85" />
+
+                <circle cx="80" cy="30" r="8" />
+                <line x1="80" y1="38" x2="80" y2="65" />
+                <line x1="80" y1="48" x2="60" y2="50" />
+                <line x1="80" y1="48" x2="95" y2="55" />
+                <line x1="80" y1="65" x2="70" y2="85" />
+                <line x1="80" y1="65" x2="90" y2="85" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center z-10 relative">
+            <div class="space-y-5">
+                <span class="text-pinkbrand-600 font-extrabold uppercase tracking-wider text-xs">About The Practitioner</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">A compassionate partner in your child’s health journey.</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Dr. T. Mafana understands that children need more than just clinical treatment—they need patience, a gentle touch, and an environment where they feel safe.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    She works closely with parents, offering expert medical guidance alongside practical support, ensuring that both child and caregiver feel empowered every step of the way.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 bg-white rounded-2xl shadow-sm border border-pinkbrand-100 flex items-start gap-3">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-pinkbrand-600 shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Kid-Friendly Care</h4>
+                            <p class="text-xs text-slate-500">Gentle examinations made fun and stress-free.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-2xl shadow-sm border border-pinkbrand-100 flex items-start gap-3">
+                        <i data-lucide="users" class="w-6 h-6 text-pinkbrand-600 shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Parent Guidance</h4>
+                            <p class="text-xs text-slate-500">Clear explanations with zero medical jargon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-pinkbrand-100 shadow-xl space-y-6">
+                <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Qualifications & Focus</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-slate-700 text-sm">
+                        <span class="w-8 h-8 rounded-full bg-pinkbrand-50 text-pinkbrand-600 flex items-center justify-center font-bold">1</span>
+                        MBChB & Fellowship in Pediatrics
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 text-sm">
+                        <span class="w-8 h-8 rounded-full bg-pinkbrand-50 text-pinkbrand-600 flex items-center justify-center font-bold">2</span>
+                        Specialized Infant & Newborn Intensive Care Experience
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 text-sm">
+                        <span class="w-8 h-8 rounded-full bg-pinkbrand-50 text-pinkbrand-600 flex items-center justify-center font-bold">3</span>
+                        Childhood Development & Behavior Management
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 text-sm">
+                        <span class="w-8 h-8 rounded-full bg-pinkbrand-50 text-pinkbrand-600 flex items-center justify-center font-bold">4</span>
+                        Adolescent Health & Wellbeing
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="care-areas" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-pinkbrand-600 font-extrabold uppercase tracking-wider text-xs">Services & Specialized Care</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Care tailored for every stage of growth</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-lg hover:border-pinkbrand-200 hover:shadow-2xl transition group">
+                <div class="w-12 h-12 bg-pinkbrand-50 rounded-2xl flex items-center justify-center text-pinkbrand-600 mb-6 group-hover:bg-pinkbrand-600 group-hover:text-white transition">
+                    <i data-lucide="baby" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Infants & Newborns</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Early milestone tracking, feeding support, jaundice checks, and scheduled infant vaccinations.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-lg hover:border-pinkbrand-200 hover:shadow-2xl transition group">
+                <div class="w-12 h-12 bg-pinkbrand-50 rounded-2xl flex items-center justify-center text-pinkbrand-600 mb-6 group-hover:bg-pinkbrand-600 group-hover:text-white transition">
+                    <i data-lucide="smile" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Toddlers & Young Children</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Management of acute childhood illnesses (fevers, flu, ear infections), growth monitoring, and allergy assessments.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-lg hover:border-pinkbrand-200 hover:shadow-2xl transition group">
+                <div class="w-12 h-12 bg-pinkbrand-50 rounded-2xl flex items-center justify-center text-pinkbrand-600 mb-6 group-hover:bg-pinkbrand-600 group-hover:text-white transition">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Pre-Teens & Adolescents</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Puberty guidance, physical assessments, adolescent mental wellbeing, and chronic conditions management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="parents-guide" class="py-20 bg-slate-900 text-white rounded-3xl mx-6 my-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-pinkbrand-400 font-extrabold uppercase tracking-wider text-xs">Transparent & Clear</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Parent Information & Consultation Fees</h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-pinkbrand-200">Consultation Structure</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 rounded-2xl bg-slate-800 border border-slate-700">
+                            <div>
+                                <p class="font-bold">Newborn & First Visit Consultation</p>
+                                <p class="text-xs text-slate-400">Comprehensive check, developmental overview (45 mins)</p>
+                            </div>
+                            <span class="text-xl font-black text-pinkbrand-500">R950</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 rounded-2xl bg-slate-800 border border-slate-700">
+                            <div>
+                                <p class="font-bold">Routine Follow-Up / Sick Visit</p>
+                                <p class="text-xs text-slate-400">Focused examination & treatment plan (20 mins)</p>
+                            </div>
+                            <span class="text-xl font-black text-pinkbrand-500">R550</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 rounded-2xl bg-slate-800 border border-slate-700">
+                            <div>
+                                <p class="font-bold">Developmental & Immunization Check</p>
+                                <p class="text-xs text-slate-400">Growth curve analysis & scheduled vaccines</p>
+                            </div>
+                            <span class="text-xl font-black text-pinkbrand-500">R800</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 italic">* All major medical aids accepted and claimed directly on your behalf. Cash and card payments accepted at reception.</p>
+                </div>
+
+                <div class="bg-slate-800/60 p-8 rounded-3xl border border-slate-700 space-y-4">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i data-lucide="heart" class="text-pinkbrand-500"></i> What Parents Can Expect
+                    </h3>
+                    <ul class="space-y-4 text-slate-300 text-sm">
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="text-pinkbrand-500 shrink-0 w-5 h-5"></i>
+                            <strong>A Child-Friendly Waiting Area:</strong> Interactive toys and books to keep little ones relaxed before their turn.
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="text-pinkbrand-500 shrink-0 w-5 h-5"></i>
+                            <strong>Unhurried Consultations:</strong> Time dedicated to addressing all parental questions without feeling rushed.
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="text-pinkbrand-500 shrink-0 w-5 h-5"></i>
+                            <strong>Clear Aftercare Notes:</strong> Written care instructions for medication doses and home recovery steps.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-pinkbrand-600 font-extrabold uppercase tracking-wider text-xs">Practice Location</span>
+                <h2 class="text-3xl font-bold text-slate-900">Visit Our Rooms in Busamed</h2>
+                <p class="text-slate-600">
+                    Located conveniently in Busamed, Harrismith, with easy stroller access, secure off-street parking, and a welcoming child-safe environment.
+                </p>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-center gap-3 text-slate-700 text-sm font-medium">
+                        <i data-lucide="map-pin" class="text-pinkbrand-600"></i> Busamed, Harrismith, 2091
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-700 text-sm font-medium">
+                        <i data-lucide="phone" class="text-pinkbrand-600"></i> +27 (011) 555-0192
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-700 text-sm font-medium">
+                        <i data-lucide="mail" class="text-pinkbrand-600"></i> kids@drmafana.co.za
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-pinkbrand-100 h-80">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Busamed,Harrismith">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-pinkbrand-50/60">
+        <div class="max-w-3xl mx-auto px-6 bg-white p-10 rounded-3xl shadow-xl border border-pinkbrand-100">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-900">Book an Appointment</h2>
+                <p class="text-slate-600 text-sm mt-1">Get in touch with Dr. Mafana's reception team directly.</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Thank you! Dr. Mafana\'s reception will contact you to confirm your appointment slot.');" class="space-y-4">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Parent / Guardian Name" required class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-pinkbrand-600 bg-slate-50 text-sm">
+                    <input type="text" placeholder="Child's Name & Age" required class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-pinkbrand-600 bg-slate-50 text-sm">
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <input type="email" placeholder="Email Address" required class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-pinkbrand-600 bg-slate-50 text-sm">
+                    <input type="tel" placeholder="Phone Number" required class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-pinkbrand-600 bg-slate-50 text-sm">
+                </div>
+                <textarea rows="4" placeholder="Brief reason for visit (e.g. routine check-up, fever, developmental screening)..." class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-pinkbrand-600 bg-slate-50 text-sm"></textarea>
+                <button type="submit" class="w-full bg-pinkbrand-600 hover:bg-pinkbrand-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-pinkbrand-500/30 transition">
+                    Request Appointment
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-100 py-8 text-center text-xs text-slate-400">
+        <p>© 2026 Dr. T. Mafana Pediatric Practice. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
