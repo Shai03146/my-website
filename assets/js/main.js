@@ -34,14 +34,15 @@
   });
  /** Send Email */
 function sendEmail(event) {
-  // Stop form from submitting natively or triggering template scripts
+  // 1. Prevent native submit and block template's validate.js from running
   event.preventDefault();
+  event.stopImmediatePropagation();
 
   const loadingEl = document.querySelector('.loading');
   const errorEl = document.querySelector('.error-message');
   const sentEl = document.querySelector('.sent-message');
 
-  // Reset UI status displays
+  // UI state feedback
   if (loadingEl) loadingEl.style.display = 'block';
   if (errorEl) errorEl.style.display = 'none';
   if (sentEl) sentEl.style.display = 'none';
@@ -57,22 +58,26 @@ function sendEmail(event) {
     .then((response) => {
       console.log("SUCCESS!", response.status, response.text);
       if (loadingEl) loadingEl.style.display = 'none';
-      if (sentEl) sentEl.style.display = 'block';
+      if (sentEl) {
+        sentEl.innerText = "Your message has been sent. Thank you!";
+        sentEl.style.display = 'block';
+      }
       document.querySelector("#contactForm").reset();
     })
     .catch((error) => {
       console.error("EmailJS Error:", error);
       if (loadingEl) loadingEl.style.display = 'none';
       if (errorEl) {
-        errorEl.innerText = "Email failed to send. Please check your network and try again.";
+        errorEl.innerText = "Email failed to send. Please try again.";
         errorEl.style.display = 'block';
       }
     });
 }
 
+// 2. Pass `true` as the third parameter to use event capture phase
 const contactForm = document.querySelector("#contactForm");
 if (contactForm) {
-  contactForm.addEventListener("submit", sendEmail);
+  contactForm.addEventListener("submit", sendEmail, true);
 }
 
   /**
