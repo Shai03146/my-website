@@ -32,23 +32,48 @@
     });
 
   });
-  /**Send Email */
-  function sendEmail() {
-    const templateParms = {
-      name :document.querySelector("#name-field").value,
-      email : document.querySelector("#email-field").value,
-      subject : document.querySelector("#subject-field").value,
-      message : document.querySelector("#message-field").value
-    }
+ /** Send Email */
+function sendEmail(event) {
+  // Prevent default form submit action (prevents page refresh)
+  event.preventDefault();
 
-    emailjs.send("service_e8mlbcq", "template_uwwlkis", templateParms)
-      .then(() => alert("Email sent successfully"))
-      .catch(() => alert("Email not sent"));
+  const templateParams = {
+    name: document.querySelector("#name-field").value,
+    email: document.querySelector("#email-field").value,
+    subject: document.querySelector("#subject-field").value,
+    message: document.querySelector("#message-field").value
+  };
 
-  }
-  if (contactForm) {
-    contactForm.addEventListener("submit", sendEmail);
-  }
+  // 1. Send Notification Email to Yourself
+  const sendAdminNotification = emailjs.send(
+    "service_e8mlbcq", 
+    "template_uwwlkis", // Replace with your Admin Notification Template ID if needed
+    templateParams
+  );
+
+  // 2. Send Auto-Reply Email to the Client
+  const sendClientAutoReply = emailjs.send(
+    "service_e8mlbcq", 
+    "YOUR_AUTOREPLY_TEMPLATE_ID", // Replace with your Auto-Reply Template ID from EmailJS
+    templateParams
+  );
+
+  // Wait for both emails to attempt sending
+  Promise.all([sendAdminNotification, sendClientAutoReply])
+    .then(() => {
+      alert("Email sent successfully!");
+      document.querySelector("#contactForm").reset(); // Clear the form fields
+    })
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      alert("Email failed to send. Please try again.");
+    });
+}
+
+const contactForm = document.querySelector("#contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", sendEmail);
+}
 
   /**
    * Toggle mobile nav dropdowns
