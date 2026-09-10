@@ -34,8 +34,17 @@
   });
  /** Send Email */
 function sendEmail(event) {
-  // 1. Prevent page refresh/interruption
+  // Stop form from submitting natively or triggering template scripts
   event.preventDefault();
+
+  const loadingEl = document.querySelector('.loading');
+  const errorEl = document.querySelector('.error-message');
+  const sentEl = document.querySelector('.sent-message');
+
+  // Reset UI status displays
+  if (loadingEl) loadingEl.style.display = 'block';
+  if (errorEl) errorEl.style.display = 'none';
+  if (sentEl) sentEl.style.display = 'none';
 
   const templateParams = {
     name: document.querySelector("#name-field").value,
@@ -44,20 +53,23 @@ function sendEmail(event) {
     message: document.querySelector("#message-field").value
   };
 
-  // 2. Call your EmailJS template
   emailjs.send("service_e8mlbcq", "template_uwwlkis", templateParams)
     .then((response) => {
       console.log("SUCCESS!", response.status, response.text);
-      alert("Email sent successfully!");
-      document.querySelector("#contactForm").reset(); // Clears form after sending
+      if (loadingEl) loadingEl.style.display = 'none';
+      if (sentEl) sentEl.style.display = 'block';
+      document.querySelector("#contactForm").reset();
     })
     .catch((error) => {
-      console.error("FAILED...", error);
-      alert("Email failed to send. Check console for details.");
+      console.error("EmailJS Error:", error);
+      if (loadingEl) loadingEl.style.display = 'none';
+      if (errorEl) {
+        errorEl.innerText = "Email failed to send. Please check your network and try again.";
+        errorEl.style.display = 'block';
+      }
     });
 }
 
-// Attach listener cleanly
 const contactForm = document.querySelector("#contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", sendEmail);
