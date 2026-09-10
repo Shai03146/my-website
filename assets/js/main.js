@@ -34,7 +34,7 @@
   });
  /** Send Email */
 function sendEmail(event) {
-  // Prevent default form submit action (prevents page refresh)
+  // 1. Prevent page refresh/interruption
   event.preventDefault();
 
   const templateParams = {
@@ -44,32 +44,20 @@ function sendEmail(event) {
     message: document.querySelector("#message-field").value
   };
 
-  // 1. Send Notification Email to Yourself
-  const sendAdminNotification = emailjs.send(
-    "service_e8mlbcq", 
-    "template_uwwlkis", // Replace with your Admin Notification Template ID if needed
-    templateParams
-  );
-
-  // 2. Send Auto-Reply Email to the Client
-  const sendClientAutoReply = emailjs.send(
-    "service_e8mlbcq", 
-    "YOUR_AUTOREPLY_TEMPLATE_ID", // Replace with your Auto-Reply Template ID from EmailJS
-    templateParams
-  );
-
-  // Wait for both emails to attempt sending
-  Promise.all([sendAdminNotification, sendClientAutoReply])
-    .then(() => {
+  // 2. Call your EmailJS template
+  emailjs.send("service_e8mlbcq", "template_uwwlkis", templateParams)
+    .then((response) => {
+      console.log("SUCCESS!", response.status, response.text);
       alert("Email sent successfully!");
-      document.querySelector("#contactForm").reset(); // Clear the form fields
+      document.querySelector("#contactForm").reset(); // Clears form after sending
     })
     .catch((error) => {
-      console.error("EmailJS Error:", error);
-      alert("Email failed to send. Please try again.");
+      console.error("FAILED...", error);
+      alert("Email failed to send. Check console for details.");
     });
 }
 
+// Attach listener cleanly
 const contactForm = document.querySelector("#contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", sendEmail);
