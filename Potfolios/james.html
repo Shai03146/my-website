@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Mathibeli | Specialist Mobile Mechanic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        softgreen: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            600: '#166534', // Unified Forest Green
+                            700: '#15803d',
+                            800: '#166534',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-slate-700 font-sans antialiased selection:bg-softgreen-600 selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-slate-100 shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-2.5">
+                <span class="w-10 h-10 rounded-full bg-softgreen-50 text-softgreen-600 flex items-center justify-center font-bold shadow-sm">
+                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                </span>
+                <div>
+                    <span class="font-extrabold text-slate-900 text-sm tracking-tight block">James Mathibeli</span>
+                    <span class="text-[10px] text-softgreen-600 font-bold block uppercase tracking-wider">Mobile Auto Specialist</span>
+                </div>
+            </a>
+            <a href="tel:+27820000000" class="bg-softgreen-600 text-white hover:bg-softgreen-700 px-3.5 py-2 rounded-full transition flex items-center gap-1.5 text-xs font-bold shadow-sm">
+                <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+                <span>Call Now</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="pt-28 pb-10 px-4 max-w-md mx-auto text-left">
+        <div class="inline-flex items-center gap-2 bg-softgreen-50 border border-softgreen-100 text-softgreen-700 px-3.5 py-1 rounded-full text-xs font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-softgreen-600"></span> **Harrismith & N3/N5 Mobile Care**
+        </div>
+        <h1 class="text-3xl font-black text-slate-900 leading-snug mb-3">
+            Car trouble shouldn't ruin your day. <span class="text-softgreen-600">Help comes directly to your location.</span>
+        </h1>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+            With over **10 years of specialized experience**, **James Mathibeli** delivers calm, reliable, and high-precision mechanical services straight to your home, workplace, or roadside across Harrismith and surrounding routes.
+        </p>
+
+        <div class="space-y-3">
+            <a href="tel:+27820000000" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-md shadow-rose-600/20 flex items-center justify-between transition text-sm">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="siren" class="w-5 h-5 animate-pulse"></i>
+                    **Immediate Emergency Call-Out**
+                </span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#consultation" class="w-full bg-softgreen-600 hover:bg-softgreen-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-md shadow-softgreen-600/10 flex items-center justify-between transition text-sm">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                    **Book Diagnostic Consultation**
+                </span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+
+        <div class="mt-8 relative rounded-3xl overflow-hidden border border-slate-100 shadow-xl bg-slate-50">
+            <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80&w=800" 
+                 alt="James Mathibeli Working on Vehicle Exemplar" 
+                 class="w-full h-64 object-cover object-center">
+            
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-700 text-[9px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-slate-200">
+                Test Image / Prototype Exemplar
+            </div>
+            
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900/80 p-4 text-white">
+                <p class="font-bold text-sm">James Mathibeli</p>
+                <p class="text-xs text-softgreen-100 font-light">Master Auto Specialist • **10+ Years Dedicated Care**</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 bg-slate-50 border-y border-slate-100 px-4">
+        <div class="max-w-md mx-auto grid grid-cols-3 gap-3 text-center">
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                <i data-lucide="clock" class="w-5 h-5 text-softgreen-600 mx-auto mb-1"></i>
+                <p class="font-bold text-slate-900 text-xs">Rapid Arrival</p>
+                <p class="text-[10px] text-slate-500">Fast response time</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                <i data-lucide="shield-check" class="w-5 h-5 text-softgreen-600 mx-auto mb-1"></i>
+                <p class="font-bold text-slate-900 text-xs">Work Guaranteed</p>
+                <p class="text-[10px] text-slate-500">Parts & labor backed</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                <i data-lucide="badge-percent" class="w-5 h-5 text-softgreen-600 mx-auto mb-1"></i>
+                <p class="font-bold text-slate-900 text-xs">Clear Quotes</p>
+                <p class="text-[10px] text-slate-500">Zero hidden fees</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultation" class="py-10 px-4 max-w-md mx-auto">
+        <span class="text-softgreen-600 font-bold uppercase tracking-wider text-xs block mb-1">Honest & Transparent</span>
+        <h2 class="text-2xl font-black text-slate-900 mb-2">Diagnostic Consultation</h2>
+        <p class="text-slate-600 text-xs leading-relaxed mb-6">
+            Before any major work begins, **James Mathibeli** conducts a full, pressure-free assessment to accurately pinpoint issues on modern computer-controlled vehicles.
+        </p>
+
+        <div class="bg-white border border-slate-200/80 rounded-2xl p-5 space-y-4 mb-6 shadow-sm">
+            <div class="flex justify-between items-start border-b border-slate-100 pb-3">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Full Computer Diagnostic</h3>
+                    <p class="text-[11px] text-slate-500">Live parameter scan & safety inspection</p>
+                </div>
+                <span class="text-base font-black text-softgreen-600">R450</span>
+            </div>
+            <div class="flex justify-between items-start border-b border-slate-100 pb-3">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Mobile On-Site Call-Out</h3>
+                    <p class="text-[11px] text-slate-500">Travel directly to your residence or location</p>
+                </div>
+                <span class="text-base font-black text-softgreen-600">R600</span>
+            </div>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Repair Deduction Guarantee</h3>
+                    <p class="text-[11px] text-slate-500">Diagnostic fee is credited toward full repairs</p>
+                </div>
+                <span class="text-xs font-bold text-softgreen-700 bg-softgreen-50 px-2 py-1 rounded-full">Credited</span>
+            </div>
+        </div>
+
+        <a href="#contact" class="w-full bg-softgreen-600 hover:bg-softgreen-700 text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-sm">
+            <i data-lucide="calendar" class="w-4 h-4"></i> Schedule On-Site Assessment
+        </a>
+    </section>
+
+    <section class="py-10 bg-softgreen-50/40 border-y border-softgreen-100 px-4">
+        <div class="max-w-md mx-auto">
+            <span class="text-softgreen-600 font-bold uppercase tracking-wider text-xs block mb-1">Capabilities & Care</span>
+            <h2 class="text-2xl font-black text-slate-900 mb-6">Mobile Service Scope</h2>
+
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-softgreen-50 text-softgreen-600 flex items-center justify-center mb-2">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xs mb-1">ECU Diagnostics</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">Reading & clearing error codes for complex sensors.</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-softgreen-50 text-softgreen-600 flex items-center justify-center mb-2">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xs mb-1">Electrical & Battery</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">Alternator testing, starter motors & battery replacement.</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-softgreen-50 text-softgreen-600 flex items-center justify-center mb-2">
+                        <i data-lucide="disc" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xs mb-1">Brake & Suspension</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">Precision pad replacement & fluid flushes on-site.</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-softgreen-50 text-softgreen-600 flex items-center justify-center mb-2">
+                        <i data-lucide="flame" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xs mb-1">Cooling & Belts</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">Thermostats, water pumps, hoses & serpentine belts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-slate-50 border-b border-slate-100 px-4">
+        <div class="max-w-md mx-auto">
+            <span class="text-softgreen-600 font-bold uppercase tracking-wider text-xs block mb-1">Verified Drivers</span>
+            <h2 class="text-2xl font-black text-slate-900 mb-6">Client Experience & Reviews</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2.5">
+                        <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-xs">Verified Driver</p>
+                            <p class="text-[10px] text-softgreen-600 font-bold">2022 Golf 8 GTI (Sensor Calibration)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed italic">"**James Mathibeli** took time to explain the issue clearly without rushing. Arrived right on schedule and resolved the fault in my driveway."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2.5">
+                        <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-xs">Verified Driver</p>
+                            <p class="text-[10px] text-softgreen-600 font-bold">2021 BMW 330i (Engine Electronics)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed italic">"Extremely polite and respectful. He handled my BMW's electronics with total precision and kept the workspace spotless."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2.5">
+                        <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-xs">Verified Driver</p>
+                            <p class="text-[10px] text-softgreen-600 font-bold">2023 Mercedes-Benz C200 (Brake Service)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed italic">"Honest about prices upfront. Saved me the huge hassle and expense of towing my car to a dealership."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2.5">
+                        <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-xs">Verified Driver</p>
+                            <p class="text-[10px] text-softgreen-600 font-bold">2022 Audi A4 2.0 TFSI (Fuel System Diagnostic)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed italic">"He brought dealership-level computer diagnostic tools right to my house. Outstanding service."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2.5">
+                        <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-xs">Verified Driver</p>
+                            <p class="text-[10px] text-softgreen-600 font-bold">2021 Ford Ranger 3.2 TDCi (Roadside Relief)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed italic">"Stranded on the N3 near Harrismith with my family. James responded quickly and had us back on the road safely."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-12 px-4 max-w-md mx-auto">
+        
+        <div class="bg-slate-900 text-white p-6 rounded-3xl mb-8 shadow-xl">
+            <span class="text-softgreen-100 text-[10px] font-bold uppercase tracking-widest block mb-1">Direct Contact Details</span>
+            <h3 class="text-xl font-extrabold mb-4">Contact James Mathibeli</h3>
+            
+            <div class="space-y-3.5 text-xs font-medium">
+                <a href="tel:+27820000000" class="flex items-center gap-3 text-slate-200 hover:text-white transition">
+                    <span class="w-8 h-8 rounded-full bg-slate-800 text-softgreen-600 flex items-center justify-center shrink-0">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </span>
+                    <div>
+                        <p class="text-[10px] text-slate-400">Direct Phone / Emergency</p>
+                        <p class="font-bold text-sm">+27 (082) 000-0000</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/27820000000" class="flex items-center gap-3 text-slate-200 hover:text-white transition">
+                    <span class="w-8 h-8 rounded-full bg-slate-800 text-softgreen-600 flex items-center justify-center shrink-0">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </span>
+                    <div>
+                        <p class="text-[10px] text-slate-400">WhatsApp Instant Chat</p>
+                        <p class="font-bold text-sm">+27 (082) 000-0000</p>
+                    </div>
+                </a>
+
+                <a href="mailto:james@mathibeliauto.co.za" class="flex items-center gap-3 text-slate-200 hover:text-white transition">
+                    <span class="w-8 h-8 rounded-full bg-slate-800 text-softgreen-600 flex items-center justify-center shrink-0">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                    </span>
+                    <div>
+                        <p class="text-[10px] text-slate-400">Email Enquiries</p>
+                        <p class="font-bold text-sm">james@mathibeliauto.co.za</p>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-3 text-slate-200">
+                    <span class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    </span>
+                    <div>
+                        <p class="text-[10px] text-slate-400">Primary Service Coverage</p>
+                        <p class="font-bold">Harrismith, N3 & N5 Corridors, & Surrounding Towns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-lg">
+            <h2 class="text-2xl font-black text-slate-900 mb-1">Send a Direct Message</h2>
+            <p class="text-slate-500 text-xs mb-6">Specify whether you need **Immediate Assistance** or a **Standard Consultation** below.</p>
+
+            <form onsubmit="event.preventDefault(); alert('Thank you! James Mathibeli has received your message and will contact you directly.');" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Request Type</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-700 cursor-pointer">
+                            <input type="radio" name="request_type" value="emergency" class="accent-rose-600" checked>
+                            Emergency Call-Out
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-700 cursor-pointer">
+                            <input type="radio" name="request_type" value="consultation" class="accent-softgreen-600">
+                            Consultation
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Your Name</label>
+                    <input type="text" placeholder="e.g. Thabo" required class="w-full p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:border-softgreen-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
+                    <input type="tel" placeholder="e.g. 082 123 4567" required class="w-full p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:border-softgreen-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Vehicle Make & Model</label>
+                    <input type="text" placeholder="e.g. 2021 VW Polo" required class="w-full p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:border-softgreen-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Issue Details & Location</label>
+                    <textarea rows="3" placeholder="Describe the mechanical issue and specify where in Harrismith or on the N3/N5 you are located..." class="w-full p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:border-softgreen-600"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-softgreen-600 hover:bg-softgreen-700 text-white font-bold py-3.5 rounded-xl shadow-md transition text-xs">
+                    Send Message to James
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div class="fixed bottom-4 inset-x-4 max-w-md mx-auto z-50">
+        <div class="bg-white/95 backdrop-blur-md p-3 rounded-2xl border border-slate-200 shadow-xl flex items-center justify-between gap-3">
+            <div class="pl-2">
+                <p class="text-[10px] text-slate-400 font-bold uppercase">Need Assistance?</p>
+                <p class="text-xs font-black text-slate-800">James Mathibeli</p>
+            </div>
+            <a href="#contact" class="bg-softgreen-600 hover:bg-softgreen-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-1.5 shrink-0">
+                <i data-lucide="message-square" class="w-4 h-4"></i> Contact Me Here
+            </a>
+        </div>
+    </div>
+
+    <footer class="py-12 pb-24 text-center text-[10px] text-slate-400 border-t border-slate-100">
+        <p>© 2026 James Mathibeli Mobile Auto Care. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
