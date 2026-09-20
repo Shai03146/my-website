@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Properties | Real Estate Co.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">REAL ESTATE<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html" class="active">Listings</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title / Banner -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Featured Listings & Viewings</h1>
+            <p>Explore our exclusive selection of residential properties available for immediate viewing.</p>
+        </div>
+    </section>
+
+    <!-- Main Properties Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="properties-list">
+
+                <!-- HOUSE 1 -->
+                <article class="property-detail-card" id="house1">
+                    <div class="property-gallery">
+                        <div class="slideshow-container" id="slideshow-1">
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="House 1 Front Exterior">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="House 1 Living Room">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" alt="House 1 Kitchen">
+                            </div>
+
+                            <!-- Next & Previous buttons -->
+                            <button class="prev" onclick="changeSlide('slideshow-1', -1)">&#10094;</button>
+                            <button class="next" onclick="changeSlide('slideshow-1', 1)">&#10095;</button>
+
+                            <!-- Dot indicators -->
+                            <div class="dots-container">
+                                <span class="dot active" onclick="currentSlide('slideshow-1', 0)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-1', 1)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-1', 2)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-info">
+                        <div class="price">$450,000</div>
+                        <h2>The Grand Suburban Residence</h2>
+                        <p class="location-tag">📍 124 Maple Street, Green Valley</p>
+                        
+                        <div class="property-specs-grid">
+                            <div class="spec-item"><strong>4</strong> Bedrooms</div>
+                            <div class="spec-item"><strong>3</strong> Bathrooms</div>
+                            <div class="spec-item"><strong>2,800</strong> Sq Ft</div>
+                            <div class="spec-item"><strong>2</strong> Garage Bays</div>
+                        </div>
+
+                        <p class="property-description">
+                            A stunning family home nestled in quiet Green Valley. Features an open-plan layout with double volume ceilings, a chef's kitchen, an expansive backyard pool, and modern energy-efficient solar installations.
+                        </p>
+
+                        <div class="property-actions">
+                            <a href="contact.html?house=The+Grand+Suburban+Residence" class="btn btn-primary">Schedule a Viewing</a>
+                            <a href="agents.html" class="btn btn-secondary">Contact Assigned Agent</a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- HOUSE 2 -->
+                <article class="property-detail-card" id="house2">
+                    <div class="property-gallery">
+                        <div class="slideshow-container" id="slideshow-2">
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="House 2 Exterior">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80" alt="House 2 Interior">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80" alt="House 2 Terrace View">
+                            </div>
+
+                            <button class="prev" onclick="changeSlide('slideshow-2', -1)">&#10094;</button>
+                            <button class="next" onclick="changeSlide('slideshow-2', 1)">&#10095;</button>
+
+                            <div class="dots-container">
+                                <span class="dot active" onclick="currentSlide('slideshow-2', 0)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-2', 1)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-2', 2)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-info">
+                        <div class="price">$620,000</div>
+                        <h2>Modern Minimalist Villa</h2>
+                        <p class="location-tag">📍 88 Ocean Avenue, Coastal Bay</p>
+                        
+                        <div class="property-specs-grid">
+                            <div class="spec-item"><strong>5</strong> Bedrooms</div>
+                            <div class="spec-item"><strong>4</strong> Bathrooms</div>
+                            <div class="spec-item"><strong>3,500</strong> Sq Ft</div>
+                            <div class="spec-item"><strong>3</strong> Garage Bays</div>
+                        </div>
+
+                        <p class="property-description">
+                            Experience luxury coastal living with ocean-front views. Designed with clean architectural lines, seamless indoor-outdoor entertainments areas, infinity pool, and smart home automation.
+                        </p>
+
+                        <div class="property-actions">
+                            <a href="contact.html?house=Modern+Minimalist+Villa" class="btn btn-primary">Schedule a Viewing</a>
+                            <a href="agents.html" class="btn btn-secondary">Contact Assigned Agent</a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- HOUSE 3 -->
+                <article class="property-detail-card" id="house3">
+                    <div class="property-gallery">
+                        <div class="slideshow-container" id="slideshow-3">
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80" alt="House 3 Living Area">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="House 3 Balcony View">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="House 3 Bedroom">
+                            </div>
+
+                            <button class="prev" onclick="changeSlide('slideshow-3', -1)">&#10094;</button>
+                            <button class="next" onclick="changeSlide('slideshow-3', 1)">&#10095;</button>
+
+                            <div class="dots-container">
+                                <span class="dot active" onclick="currentSlide('slideshow-3', 0)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-3', 1)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-3', 2)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-info">
+                        <div class="price">$310,000</div>
+                        <h2>Cozy Downtown Penthouse</h2>
+                        <p class="location-tag">📍 402 Skyline Boulevard, City Center</p>
+                        
+                        <div class="property-specs-grid">
+                            <div class="spec-item"><strong>2</strong> Bedrooms</div>
+                            <div class="spec-item"><strong>2</strong> Bathrooms</div>
+                            <div class="spec-item"><strong>1,400</strong> Sq Ft</div>
+                            <div class="spec-item"><strong>1</strong> Parking Spot</div>
+                        </div>
+
+                        <p class="property-description">
+                            Ideal urban residence offering floor-to-ceiling city skyline views, underground secure parking, concierge services, and walking proximity to top restaurants and transport hubs.
+                        </p>
+
+                        <div class="property-actions">
+                            <a href="contact.html?house=Cozy+Downtown+Penthouse" class="btn btn-primary">Schedule a Viewing</a>
+                            <a href="agents.html" class="btn btn-secondary">Contact Assigned Agent</a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- HOUSE 4 -->
+                <article class="property-detail-card" id="house4">
+                    <div class="property-gallery">
+                        <div class="slideshow-container" id="slideshow-4">
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80" alt="House 4 Main View">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="House 4 Backyard">
+                            </div>
+                            <div class="slide fade">
+                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="House 4 Kitchen">
+                            </div>
+
+                            <button class="prev" onclick="changeSlide('slideshow-4', -1)">&#10094;</button>
+                            <button class="next" onclick="changeSlide('slideshow-4', 1)">&#10095;</button>
+
+                            <div class="dots-container">
+                                <span class="dot active" onclick="currentSlide('slideshow-4', 0)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-4', 1)"></span>
+                                <span class="dot" onclick="currentSlide('slideshow-4', 2)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-info">
+                        <div class="price">$520,000</div>
+                        <h2>Contemporary Family Home</h2>
+                        <p class="location-tag">📍 15 Pine Crest Way, Hillside</p>
+                        
+                        <div class="property-specs-grid">
+                            <div class="spec-item"><strong>4</strong> Bedrooms</div>
+                            <div class="spec-item"><strong>3</strong> Bathrooms</div>
+                            <div class="spec-item"><strong>2,950</strong> Sq Ft</div>
+                            <div class="spec-item"><strong>2</strong> Garage Bays</div>
+                        </div>
+
+                        <p class="property-description">
+                            Situated in a quiet gated estate with mountain views. Built with sustainable hardwood finishing, an outdoor braai/patio facility, and top-tier security systems throughout.
+                        </p>
+
+                        <div class="property-actions">
+                            <a href="contact.html?house=Contemporary+Family+Home" class="btn btn-primary">Schedule a Viewing</a>
+                            <a href="agents.html" class="btn btn-secondary">Contact Assigned Agent</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>REAL ESTATE<span>.</span></h3>
+                <p>Your trusted real estate partner in finding high-quality residential and commercial properties.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="agents.html">Our Agents</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>Email: info@realestate.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 100 Main Street, Suite 400</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Real Estate Co. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

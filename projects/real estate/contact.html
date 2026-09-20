@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Real Estate Co.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">REAL ESTATE<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html">Listings</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title / Banner -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us & Schedule Viewings</h1>
+            <p>Get in touch with our team or schedule a private showing for your next property.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Contact Info Column -->
+                <div class="contact-info-card">
+                    <span class="sub-heading">Get In Touch</span>
+                    <h2>We'd love to hear from you</h2>
+                    <p>Whether you're looking to buy, sell, or schedule a viewing for one of our featured properties, our team is ready to assist you.</p>
+
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div>
+                                <h4>Main Office</h4>
+                                <p>100 Main Street, Suite 400<br>Metropolitan City</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+1 234 567 890 / +1 234 567 891</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@realestate.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">🕒</div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact & Viewing Request Form -->
+                <div class="contact-form-card">
+                    <h3>Send Us a Message</h3>
+                    <form id="viewingForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+1 234 567 890">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertySelect">Interested Property (Optional)</label>
+                            <select id="propertySelect">
+                                <option value="General Inquiry">-- General Inquiry --</option>
+                                <option value="The Grand Suburban Residence">The Grand Suburban Residence ($450,000)</option>
+                                <option value="Modern Minimalist Villa">Modern Minimalist Villa ($620,000)</option>
+                                <option value="Cozy Downtown Penthouse">Cozy Downtown Penthouse ($310,000)</option>
+                                <option value="Contemporary Family Home">Contemporary Family Home ($520,000)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="agentSelect">Preferred Agent (Optional)</label>
+                            <select id="agentSelect">
+                                <option value="Any Available Agent">Any Available Agent</option>
+                                <option value="Marcus Vance">Marcus Vance</option>
+                                <option value="Sarah Jenkins">Sarah Jenkins</option>
+                                <option value="David Sterling">David Sterling</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Viewing Preferred Date & Time</label>
+                            <textarea id="message" rows="4" placeholder="Let us know how we can help or specify your ideal date/time for a viewing..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+                    </form>
+                    <div id="formSuccessMessage" class="success-message" style="display: none;">
+                        ✅ Thank you! Your request has been sent successfully. An agent will get back to you shortly.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>REAL ESTATE<span>.</span></h3>
+                <p>Your trusted real estate partner in finding high-quality residential and commercial properties.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="agents.html">Our Agents</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>Email: info@realestate.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 100 Main Street, Suite 400</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Real Estate Co. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
