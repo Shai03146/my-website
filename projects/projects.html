@@ -101,53 +101,46 @@
       font-size: 14px;
     }
 
+    /* Button Container Layout */
     .cta-container {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 15px; /* Adds space between the two buttons */
+      flex-wrap: wrap;
       padding-top: 20px;
       border-top: 1px solid #e5e7eb;
       margin-top: 20px;
     }
 
-    /* Button Container Layout */
-.cta-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px; /* Adds space between the two buttons */
-  flex-wrap: wrap;
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
-  margin-top: 20px;
-}
+    /* Blue Contact Button */
+    .contact-btn {
+      display: inline-block;
+      background-color: #2563eb; /* Changed to Blue */
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+    .contact-btn:hover {
+      background-color: #1d4ed8;
+    }
 
-/* Blue Contact Button */
-.contact-btn {
-  display: inline-block;
-  background-color: #2563eb; /* Changed to Blue */
-  color: #ffffff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-.contact-btn:hover {
-  background-color: #1d4ed8;
-}
-
-/* Back to Home Button */
-.home-btn {
-  display: inline-block;
-  background-color: #4b5563; /* Slate / Neutral Dark */
-  color: #ffffff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-.home-btn:hover {
-  background-color: #374151;
-}
+    /* Back to Home Button */
+    .home-btn {
+      display: inline-block;
+      background-color: #4b5563; /* Slate / Neutral Dark */
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+    .home-btn:hover {
+      background-color: #374151;
+    }
   </style>
 </head>
 <body>
@@ -165,10 +158,10 @@
     <div class="portfolio-grid" id="portfolioGrid"></div>
 
     <!-- CTA Container with both Back to Home & Blue Contact buttons -->
-<div class="cta-container">
-  <a href="../index.html" class="home-btn">← Back to Home</a>
-  <a href="../index.html#contact" class="contact-btn">Verify & Contact via Form</a>
-</div>
+    <div class="cta-container">
+      <a href="../index.html" class="home-btn">← Back to Home</a>
+      <a href="../index.html#contact" class="contact-btn">Verify & Contact via Form</a>
+    </div>
   </div>
 
   <script>
@@ -189,6 +182,11 @@
         title: "Project Gamma",
         description: "A brief preview description of the third portfolio piece showcasing custom functionality.",
         projectUrl: "project3.html"
+      },
+      {
+        title: "Project Delta",
+        description: "A brief preview description of the fourth portfolio piece showcasing additional layout and options.",
+        projectUrl: "project4.html"
       }
     ];
 
