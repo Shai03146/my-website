@@ -5,9 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work Templates & Portfolios</title>
   <style>
+    :root {
+      --bg-primary: #f9fafb;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --text-subtle: #6b7280;
+      --border-color: #e5e7eb;
+      --primary-blue: #2563eb;
+      --primary-blue-hover: #1d4ed8;
+      --neutral-dark: #4b5563;
+      --neutral-dark-hover: #374151;
+      --focus-ring: #93c5fd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f9fafb;
+      background-color: var(--bg-primary);
       margin: 0;
       padding: 40px 20px;
     }
@@ -15,7 +33,7 @@
     .portfolio-container {
       max-width: 1000px;
       margin: 0 auto;
-      background: #ffffff;
+      background: var(--card-bg);
       border-radius: 12px;
       padding: 40px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -23,12 +41,12 @@
 
     .portfolio-header h1 {
       margin-top: 0;
-      color: #111827;
+      color: var(--text-main);
       font-size: 28px;
     }
 
     .portfolio-header p {
-      color: #4b5563;
+      color: var(--text-muted);
       line-height: 1.6;
       font-size: 16px;
     }
@@ -42,12 +60,18 @@
     }
 
     .portfolio-card {
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--border-color);
       border-radius: 8px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      background: #fff;
+      background: var(--card-bg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     /* Live Preview Wrapper */
@@ -76,15 +100,15 @@
       flex-grow: 1;
     }
 
-    .card-body h3 {
+    .card-body h2 {
       margin: 0 0 8px 0;
       font-size: 18px;
-      color: #111827;
+      color: var(--text-main);
     }
 
     .card-body p {
       font-size: 14px;
-      color: #6b7280;
+      color: var(--text-subtle);
       margin-bottom: 20px;
       flex-grow: 1;
     }
@@ -93,80 +117,106 @@
       display: inline-block;
       text-align: center;
       padding: 10px 14px;
-      background: #2563eb;
+      background: var(--primary-blue);
       color: #ffffff;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 500;
       font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .preview-link:hover {
+      background-color: var(--primary-blue-hover);
     }
 
     /* Button Container Layout */
     .cta-container {
       display: flex;
       justify-content: center;
-      gap: 15px; /* Adds space between the two buttons */
+      gap: 15px;
       flex-wrap: wrap;
       padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid var(--border-color);
       margin-top: 20px;
     }
 
-    /* Blue Contact Button */
-    .contact-btn {
-      display: inline-block;
-      background-color: #2563eb; /* Changed to Blue */
-      color: #ffffff;
+    /* Common Button Base */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 12px 24px;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
-      transition: background-color 0.2s ease;
-    }
-    .contact-btn:hover {
-      background-color: #1d4ed8;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Back to Home Button */
-    .home-btn {
-      display: inline-block;
-      background-color: #4b5563; /* Slate / Neutral Dark */
+    .btn:focus-visible,
+    .preview-link:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    .contact-btn {
+      background-color: var(--primary-blue);
       color: #ffffff;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background-color 0.2s ease;
+    }
+    .contact-btn:hover {
+      background-color: var(--primary-blue-hover);
+    }
+
+    .home-btn {
+      background-color: var(--neutral-dark);
+      color: #ffffff;
     }
     .home-btn:hover {
-      background-color: #374151;
+      background-color: var(--neutral-dark-hover);
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 640px) {
+      body {
+        padding: 20px 12px;
+      }
+      
+      .portfolio-container {
+        padding: 20px;
+      }
+
+      .cta-container {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="portfolio-container">
-    <div class="portfolio-header">
+  <main class="portfolio-container">
+    <header class="portfolio-header">
       <h1>Work Templates & Portfolios</h1>
       <p>
         These are work templates and portfolios for your project. This is where you will see all the necessary details about your project. 
         Please check all the different projects listed here. If you like them, verify which ones you like and reach out using our contact form below!
       </p>
-    </div>
+    </header>
 
     <!-- Cards injected via JS -->
-    <div class="portfolio-grid" id="portfolioGrid"></div>
+    <section class="portfolio-grid" id="portfolioGrid" aria-label="Projects List"></section>
 
     <!-- CTA Container with both Back to Home & Blue Contact buttons -->
-    <div class="cta-container">
-      <a href="../index.html" class="home-btn">← Back to Home</a>
-      <a href="../index.html#contact" class="contact-btn">Verify & Contact via Form</a>
-    </div>
-  </div>
+    <nav class="cta-container" aria-label="Page actions">
+      <a href="../index.html" class="btn home-btn">← Back to Home</a>
+      <a href="../index.html#contact" class="btn contact-btn">Verify & Contact via Form</a>
+    </nav>
+  </main>
 
   <script>
-    // FAST TRACK DATA EDITING:
-    // Update or add items here without touching HTML structures!
     const portfolioData = [
       {
         title: "Project Alpha",
@@ -190,29 +240,43 @@
       }
     ];
 
-    // Function to render cards dynamically
     function renderPortfolio() {
       const gridContainer = document.getElementById('portfolioGrid');
       
+      // Efficient rendering using DocumentFragment
+      const fragment = document.createDocumentFragment();
+
       portfolioData.forEach(item => {
-        const cardHTML = `
-          <div class="portfolio-card">
-            <div class="preview-frame-container">
-              <iframe src="${item.projectUrl}" class="preview-frame" title="${item.title} Preview"></iframe>
-            </div>
-            <div class="card-body">
-              <h3>${item.title}</h3>
-              <p>${item.description}</p>
-              <a href="${item.projectUrl}" target="_blank" class="preview-link">View Full Project</a>
-            </div>
+        const card = document.createElement('article');
+        card.className = 'portfolio-card';
+        
+        card.innerHTML = `
+          <div class="preview-frame-container">
+            <iframe 
+              src="${item.projectUrl}" 
+              class="preview-frame" 
+              title="Preview of ${item.title}" 
+              loading="lazy" 
+              tabindex="-1">
+            </iframe>
+          </div>
+          <div class="card-body">
+            <h2>${item.title}</h2>
+            <p>${item.description}</p>
+            <a href="${item.projectUrl}" target="_blank" rel="noopener noreferrer" class="preview-link">
+              View Full Project <span class="sr-only">(${item.title})</span>
+            </a>
           </div>
         `;
-        gridContainer.innerHTML += cardHTML;
+        
+        fragment.appendChild(card);
       });
+
+      gridContainer.replaceChildren(fragment);
     }
 
     // Initialize on page load
-    renderPortfolio();
+    document.addEventListener('DOMContentLoaded', renderPortfolio);
   </script>
 
 </body>
